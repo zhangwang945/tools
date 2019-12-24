@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* * {
+            box-sizing: border-box;
+        } */
+
+        .container {
+            margin: 100px auto;
+            width: 242px;
+            height: 242px;
+            border: 1px solid black;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .item {
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            text-align: center;
+        }
+
+        .item:nth-child(-n+6) {
+            border-bottom: 1px solid black;
+        }
+
+        .item:not(:nth-child(3n)) {
+            border-right: 1px solid black;
+        }
+
+        .active {
+            background: lightgoldenrodyellow;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- <div class="container">
+        <div class="item active">1</div>
+        <div class="item">2</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">start</div>
+        <div class="item">6</div>
+        <div class="item">7</div>
+        <div class="item">8</div>
+        <div class="item">9</div>
+    </div> -->
+</body>
+<script src="./draw.js"></script>
+<script>
+    //clientDraw.create 参数 (ele,Array) 
+    // 第二个参数为数组，rate为中奖几率，保留两位小数；
+    //所有的中奖几率总和为 100 , 其中没有rate属性的 将会取 (100-已设置几率总和)/未设置几率的个数  该值作为中奖几率
+    //clientDraw.getResult  
+    clientDraw.create(document.body, [
+        [{ title: 1, rate: 50 }, { title: 2, rate: 30 }, { title: 3 }],
+        [{ title: 4 }, { title: 6 }],
+        [{ title: 7 }, { title: 8 }, { title: 9 }]
+    ])
+</script>
+
+</html>
